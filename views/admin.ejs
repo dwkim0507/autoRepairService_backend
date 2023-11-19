@@ -1,0 +1,33 @@
+<%- include('includes/header-logout.ejs') %>
+   <main>
+
+      <h2> Dashboard </h2>
+
+      <table class="dashboard">
+         <tr>
+            <th>Name</th>
+            <th>Email/Phone</th>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Delete</th>
+         </tr>
+         <!-- Use a forEach to display records -->
+         <% data.forEach(item=> { %>
+            <tr>
+               <td>
+                  <%= item.name %>
+               </td>
+               <td>
+                  <%= item.email %>
+               </td>
+               <td><a href="<%= `/detail/${item.id}` %>">View</a></td>
+               <td><a href="<%= `/edit/${item.id}` %>">Edit</a></td>
+               <td><a href="<%= `/delete/${item.id}` %>">Delete</a></td>
+            </tr>
+            <% }); %>
+      </table>
+
+
+   </main>
+
+   <%- include('includes/footer.ejs') %>

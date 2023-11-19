@@ -1,0 +1,54 @@
+<%- include('includes/header.ejs') %>
+   <!-- Checking if contact is defined before rending -->
+   <main>
+
+      <h1>
+         Information Detail
+      </h1>
+
+      <form method="Post" action="/edit" enctype="multipart/form-data">
+         <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" readonly value="<%= contact.name %>">
+         </div>
+
+         <div>
+            <label for="email">Email/Phone</label>
+            <input type="text" id="email" name="email" readonly value="<%= contact.email %>">
+         </div>
+         <div>
+            <label>Photo</label>
+            <span class="filename"> <a href="../uploads/<%= contact.photoName %>" a>
+                  <%= contact.photoName %>
+               </a> </span>
+         </div>
+
+         <br />
+         <div>
+            <input type="text" id="autoMessage" name="autoMessage" value="<%= contact.autoMessage %>">
+         </div>
+      </form>
+
+      <br />
+      <button><a href="/admin">Close</a></button>
+
+      <!-- Pass contact id to endpoint -->
+   </main>
+
+
+   <script src="../js/tinymce/jquery.tinymce.min.js"></script>
+   <script src="../js/tinymce/tinymce.min.js"></script>
+
+   <!-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> -->
+
+   <script>
+      tinymce.init({
+         selector: '#autoMessage',
+         // width: 500,
+         height: 500,
+         menubar: false
+      });
+   </script>
+
+
+   <%- include('includes/footer.ejs') %>

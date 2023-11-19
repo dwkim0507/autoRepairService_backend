@@ -1,0 +1,31 @@
+<%- include('includes/header.ejs') %>
+
+   <main>
+      <div id="thank">
+         <h1>Thank you</h1>
+         <table>
+            <tr>
+               <th>Name</th>
+               <th>Email/Phone</th>
+               <th>Photo</th>
+            </tr>
+            <!-- Use a forEach to display records -->
+            <tr>
+               <td>
+                  <%= name %>
+               </td>
+               <td>
+                  <%= email %>
+               </td>
+               <td>
+                  <%= photoName %>
+               </td>
+            </tr>
+
+         </table>
+
+      </div>
+   </main>
+
+
+   <%- include('includes/footer.ejs') %>

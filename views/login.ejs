@@ -1,0 +1,22 @@
+<%- include('includes/header.ejs') %>
+   <main>
+      <h1>Login</h1>
+      <br />
+      <form action="login_process" method="POST">
+         <div>
+            <label class="loginlabel" for="username">Username</label>
+            <input class="login" type="text" id="username" name="username" />
+         </div>
+         <div>
+            <label class="loginlabel" for="password">Password</label>
+            <input class="login" type="password" id="password" name="password" />
+         </div>
+         <br />
+         <div>
+            <input type="submit" value="Submit">
+         </div>
+      </form>
+
+   </main>
+
+   <%- include('includes/footer.ejs') %>
